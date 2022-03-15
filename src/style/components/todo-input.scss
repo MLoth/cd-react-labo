@@ -1,2 +1,25 @@
 .c-todo-input {
+  margin-bottom: 2rem;
+}
+
+.c-todo-input__container {
+  display: flex;
+  align-items: center;
+}
+
+.c-todo-input-button {
+  margin-right: 0.5rem;
+}
+
+.c-todo-input-symbol {
+  color: var(--global-theme-color); // -> wordt gebruikt in de stroke
+}
+
+.c-todo-input-text {
+  flex: 1;
+  font-size: 1.1rem;
+}
+
+.c-todo-input-categories {
+  margin-top: 0.5rem;
 }
