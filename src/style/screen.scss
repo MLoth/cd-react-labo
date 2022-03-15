@@ -2,15 +2,15 @@
 // @use -> gebruikt file in huidige scope
 
 // SETTINGS
-@import './settings/media-sizes.scss';
-@import './settings/fonts.scss';
+@forward './settings/media-sizes.scss';
+@forward './settings/fonts.scss';
 
 // TOOLS
-@import './tools/mq.scss';
+@forward './tools/mq.scss';
 
 // GENERIC
-@import './generic/reset';
+@use './generic/reset';
 
 // ELEMENTS
-@import './elements/root.scss';
-@import './elements/page.scss';
+@use './elements/root.scss';
+@use './elements/page.scss';
