@@ -7,6 +7,12 @@ import TodoItem from './components/TodoItem'
 import Todo from './interfaces/Todo'
 
 function App() {
+  const [todos, setTodos] = useState<Todo[]>([])
+
+  const appendTodo = (t: Todo) => {
+    setTodos((oldTodos: Todo[]) => [...oldTodos, t])
+  }
+
   return (
     <main>
       {/* CONTAINER: Zet het in het midden */}
@@ -14,17 +20,15 @@ function App() {
         {/* ROW: Geeft padding tot de randen */}
         <AppRow>
           {/* Content */}
-          <TodoAppHeader />
+          <TodoAppHeader amount={todos.length} />
 
-          <TodoInput />
+          <TodoInput setNewTodo={(t: Todo) => appendTodo(t)} />
 
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-          <TodoItem />
-
-          {/* {dummyItems.map(() => (
-          ))} */}
+          <>
+            {todos.map((t: Todo) => (
+              <TodoItem todo={t} key={t.id} />
+            ))}
+          </>
         </AppRow>
       </AppContainer>
     </main>
